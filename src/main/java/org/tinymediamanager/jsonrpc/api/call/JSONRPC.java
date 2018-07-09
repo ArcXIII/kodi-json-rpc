@@ -367,7 +367,7 @@ public final class JSONRPC {
               cn = "Leia";
             }
           }
-          if (major > 9) {
+          if (major >= 9) {
             cn = "Leia";
           }
           // STILL null?

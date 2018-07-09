@@ -325,6 +325,7 @@ public final class JSONRPC {
       public static final String                  PATCH = "patch";
       public static final HashMap<String, String> CODENAME;
       static {
+        // https://kodi.wiki/?title=JSON-RPC_API#API_versions
         CODENAME = new HashMap<String, String>();
         CODENAME.put("8.3.0", "Kodi 18 (Leia)");
         CODENAME.put("8.0.0", "Kodi 17 (Krypton)");
@@ -360,13 +361,17 @@ public final class JSONRPC {
         String cn = CODENAME.get(toString());
         if (cn == null) {
           // https://github.com/xbmc/xbmc/blob/master/xbmc/interfaces/json-rpc/schema/version.txt
-          if (major > 8) {
+          if (major == 8) {
             cn = "Krypton";
             if (minor > 3) {
               cn = "Leia";
             }
           }
-          else {
+          if (major > 9) {
+            cn = "Leia";
+          }
+          // STILL null?
+          if (cn == null) {
             cn = "Unknown";
           }
         }

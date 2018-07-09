@@ -100,7 +100,7 @@ public class JsonApiRequest {
 
       conn.setDoOutput(true);
 
-      LOGGER.debug("CALL: {}", entity.toString());
+      LOGGER.debug("Request: {}", entity.toString());
       try {
         OutputStreamWriter output = new OutputStreamWriter(conn.getOutputStream(), "UTF-8");
         output.write(entity);

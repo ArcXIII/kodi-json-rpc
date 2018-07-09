@@ -133,9 +133,8 @@ public class JavaConnectionManager {
           }
         }
         catch (Exception e) {
+          LOGGER.warn("Error parsing incoming message: {}", e.getMessage());
           disconnect();
-          LOGGER.error("", e);
-          // e.printStackTrace();
         }
       };
 

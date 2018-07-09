@@ -362,13 +362,13 @@ public final class JSONRPC {
         if (cn == null) {
           // https://github.com/xbmc/xbmc/blob/master/xbmc/interfaces/json-rpc/schema/version.txt
           if (major == 8) {
-            cn = "Krypton";
+            cn = "Kodi 17 (Krypton)";
             if (minor > 3) {
-              cn = "Leia";
+              cn = "Kodi 18 (Leia)";
             }
           }
           if (major >= 9) {
-            cn = "Leia";
+            cn = "Kodi 18 (Leia)";
           }
           // STILL null?
           if (cn == null) {
